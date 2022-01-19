@@ -3,6 +3,13 @@ const menuLinks = document.querySelector('.navbar-menu');
 const navLogo = document.querySelector('#logo');
 const gifButton = document.getElementById("gif-button");
 const gifSection = document.getElementById("gif-section");
+const firstName = document.getElementById("first-name");
+const lastName = document.getElementById("last-name");
+// const username = document.getElementById("username");
+// const password = document.getElementById("password");
+const submit = document.getElementById("submit")
+
+
 
 // Display Mobile Menu
 const mobileMenu = () => {
@@ -11,38 +18,6 @@ const mobileMenu = () => {
 };
 
 menu.addEventListener('click', mobileMenu);
-
-// Show active menu when scrolling
-const highlightMenu = () => {
-  const elem = document.querySelector('.highlight');
-  const homeMenu = document.querySelector('#home');
-  const aboutMenu = document.querySelector('.user');
-  let scrollPos = window.scrollY;
-  // console.log(scrollPos);
-
-  // adds 'highlight' class to my menu items
-  if (window.innerWidth > 960 && scrollPos < 600) {
-    homeMenu.classList.add('highlight');
-    aboutMenu.classList.remove('highlight');
-    return;
-  } else if (window.innerWidth > 960 && scrollPos < 1400) {
-    aboutMenu.classList.add('highlight');
-    homeMenu.classList.remove('highlight');
-    servicesMenu.classList.remove('highlight');
-    return;
-  } else if (window.innerWidth > 960 && scrollPos < 2345) {
-    servicesMenu.classList.add('highlight');
-    aboutMenu.classList.remove('highlight');
-    return;
-  }
-
-  if ((elem && window.innerWIdth < 960 && scrollPos < 600) || elem) {
-    elem.classList.remove('highlight');
-  }
-};
-
-window.addEventListener('scroll', highlightMenu);
-window.addEventListener('click', highlightMenu);
 
 //  Close mobile Menu when clicking on a menu item
 const hideMobileMenu = () => {
@@ -71,3 +46,24 @@ gifButton.addEventListener("click", () => {
         gifSection.appendChild(gif);
         });
 });
+
+const users = [
+    { username: 'chance', password: 'password' },
+    { username: 'izzy', password: 'password123' }
+]
+
+const saveData = () => {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    const foundUser = users.find(user => user.username === username && user.password === password);
+    if (!foundUser) {
+        console.log("Invalid User")
+    } else {
+        
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    submit.addEventListener('click', saveData());
+});
+
