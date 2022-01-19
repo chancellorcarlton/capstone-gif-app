@@ -15,8 +15,7 @@ app.use(express.json());
 
 const ctrl = require('./controller')
 
-
-
+app.get('/api/gif', ctrl.getGif);
 
 
 const port = process.env.PORT || 4321;

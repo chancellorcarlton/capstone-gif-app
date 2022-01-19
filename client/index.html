@@ -12,21 +12,21 @@
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="#home" id="logo">HOME</a>
+            <a href="#home" id="logo">GIF</a>
             <div class="toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
             <ul class="navbar-menu">
-                <li class="nav-item">
-                    <a href="home" class="navbar-links" id="home-page">HOME</a>
+                <li class="navbar-item">
+                    <a href="#home" class="navbar-links" id="home-page">HOME</a>
                 </li>
-                <li class="nav-item">
-                    <a href="getgif" class="navbar-links" id="getgif-page">GET GIF</a>
+                <li class="navbar-item">
+                    <a href="#getgif" class="navbar-links" id="getgif-page">GIFS</a>
                 </li>
-                <li class="nav-item">
-                    <a href="login" class="navbar-links" id="login-page">LOGIN</a>
+                <li class="navbar-btn">
+                    <button class="button" id="login"><a href="#login" class="navbar-links" id="login-page">LOGIN</a></button>
                 </li>
             </ul>
         </div>
@@ -34,14 +34,46 @@
 
     <!-- HOME PAGE -->
     <div class="home" id="home">
-        <div id="home-text">
-            <h1 class="home-heading">GET GIF</h1>
-            <button id="home-btn">
-                <a href="#getgif">GETGIF</a>
+        <div id="home-container">
+            <h1 class="home-heading">GIFS</h1>
+            <p class="gif-description">RANDOM GIF</p>
+            <br>
+            <br>
+            <button class="home-btn" id="gif-button">
+                <a href="#getgif" id="gif-button">CLICK</a>
             </button>
+            <br>
+            <section id="gif-section"></section>
         </div>
     </div>
 
+
+    <!-- Create User -->
+    <div class="user">
+        <div class="user-container">
+          <h1 class="user-heading">CREATE ACCOUNT</h1>
+            <form action="create-user" class="user-form">
+                <br>
+                <label for="first-name"></label>
+                <input type="text" class="input-box" id="first-name" name="firstname" placeholder="ENTER FIRST NAME">
+                <label for="last-name"></label>
+                <input type="text" class="input-box" id="last-name" name="lastname" placeholder="ENTER LAST NAME">
+                <label for="username"></label>
+                <input type="text" class="input-box" id="username" name="username" placeholder="CREATE USERNAME">
+                <label for="password"></label>
+                <input type="text" class="input-box" id="password" name="password" placeholder="SET PASSWORD">
+                <label for="email"></label>
+                <input type="text" class="input-box" id="email" name="email" placeholder="ENTER E-MAIL">
+                <br>
+                <div>
+                <input type="submit" value="SUBMIT" class="submit-btn">
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
