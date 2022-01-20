@@ -1,25 +1,26 @@
+require('dotenv').config();
 const express = require('express');
+const app = express();
 const cors = require('cors');
 const path = require('path');
+const {SERVER_PORT} = process.env;
+// const {seed} = require('./seed.js')
+const {getGif} = require('./controller')
 
-const app = express();
+app.use(cors());
+app.use(express.json());
+app.use(express.static('client')) //linking public folder
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../client/index.html'));
 });
 
-app.use(express.static('client')) //linking public folder
 
-app.use(cors());
-app.use(express.json());
-
-const ctrl = require('./controller')
-
-app.get('/api/gif', ctrl.getGif);
+// app.post('/seed', seed)
 
 
-const port = process.env.PORT || 4321;
+app.get('/api/gif', getGif)
 
-app.listen(port, () => {
-    console.log(`Listening on ${port}`)
+app.listen(SERVER_PORT, () => {
+    console.log(`Listening on ${SERVER_PORT}`)
 });

@@ -1,5 +1,17 @@
+require('dotenv').config()
+const {CONNECTION_STRING} = process.env
 const axios = require('axios');
 const apiKey = require('./config')
+const Sequelize = require('sequelize')
+
+const sequelize = new Sequelize(process.env.CONNECTION_STRING, {
+    dialect: 'postgres',
+    dialectOptions: {
+        ssl: {
+            rejectUnauthorized: false
+        }
+    }
+})
 
 module.exports = {
     getGif: (req, res) => {

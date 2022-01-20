@@ -5,8 +5,8 @@ const gifButton = document.getElementById("gif-button");
 const gifSection = document.getElementById("gif-section");
 const firstName = document.getElementById("first-name");
 const lastName = document.getElementById("last-name");
-// const username = document.getElementById("username");
-// const password = document.getElementById("password");
+const username = document.getElementById("username");
+const password = document.getElementById("password");
 const submit = document.getElementById("submit")
 
 
@@ -47,21 +47,21 @@ gifButton.addEventListener("click", () => {
         });
 });
 
-const users = [
-    { username: 'chance', password: 'password' },
-    { username: 'izzy', password: 'password123' }
-]
+// const users = [
+//     { username: 'chance', password: 'password' },
+//     { username: 'izzy', password: 'password123' }
+// ]
 
-const saveData = () => {
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
-    const foundUser = users.find(user => user.username === username && user.password === password);
-    if (!foundUser) {
-        console.log("Invalid User")
-    } else {
+// const saveData = () => {
+//     let username = document.getElementById("username").value;
+//     let password = document.getElementById("password").value;
+//     const foundUser = users.find(user => user.username === username && user.password === password);
+//     if (!foundUser) {
+//         console.log("Invalid User")
+//     } else {
         
-    }
-}
+//     }
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
     submit.addEventListener('click', saveData());
