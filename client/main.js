@@ -49,8 +49,8 @@ gifButton.addEventListener("click", () => {
 });
 
 form.addEventListener("click", (e) => {
-    e.preventDefault();
     console.log("New user submitted!");
+    e.preventDefault();
 
     axios.post('http://localhost:4321/users', {username:username,password:password,first_name:firstName,last_name:lastName,email:email})
         .then(() => {
