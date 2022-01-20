@@ -14,7 +14,6 @@ const sequelize = new Sequelize(DATABASE_URL, {
 module.exports = {
     seed: (req, res) => {
         sequelize.query(`
-
         CREATE TABLE users (
             username SERIAL PRIMARY KEY,
             password VARCHAR(180),
@@ -22,7 +21,6 @@ module.exports = {
             last_name VARCHAR(180),
             email VARCHAR(300)
         );
-
         `).then(() => {
             console.log('DB SEEDED!');
             res.sendStatus(200);

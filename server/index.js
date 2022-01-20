@@ -22,7 +22,7 @@ app.post('/seed', seed);
 // FEATURES
 app.get('/api/gif', getGif);
 
-app.post('/user', user);
+app.post('/users', user);
 
 const port = process.env.PORT || 4321;
 
