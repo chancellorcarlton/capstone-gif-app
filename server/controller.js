@@ -1,7 +1,7 @@
 require('dotenv').config()
-const {DATABASE_URL} = process.env
+const {DATABASE_URL, GIF_API_KEY} = process.env
 const axios = require('axios');
-const apiKey = require('./config')
+const apiKey = GIF_API_KEY
 const Sequelize = require('sequelize')
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
@@ -15,7 +15,7 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
 
 module.exports = {
     getGif: (req, res) => {
-        axios.get(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey.gif_api_key}&tag=funny&rating=g`)
+        axios.get(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=funny&rating=g`)
         .then(gifRes => {
             res.status(200).send(gifRes.data.data.images.original.url);
         });
