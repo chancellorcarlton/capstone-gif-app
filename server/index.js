@@ -6,6 +6,7 @@ const path = require('path');
 const {seed} = require('./seed.js')
 const {SERVER_PORT} = process.env;
 const {getGif} = require('./controller')
+const {user} = require('./controller')
 
 app.use(cors());
 app.use(express.json());
@@ -15,12 +16,12 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../client/index.html'));
 });
 
-app.post('/seed', seed)
+app.post('/seed', seed);
 
 // FEATURES
-app.get('/api/gif', getGif)
+app.get('/api/gif', getGif);
 
-app.post('/user')
+app.post('/user', user);
 
 app.listen(SERVER_PORT, () => {
     console.log(`Listening on ${SERVER_PORT}`)

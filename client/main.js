@@ -8,7 +8,7 @@ const lastName = document.getElementById("last-name");
 const username = document.getElementById("username");
 const password = document.getElementById("password");
 const email = document.getElementById("email")
-const form = document.getElementsByClassName("user-form")
+const form = document.getElementById("submit")
 
 
 
@@ -48,9 +48,9 @@ gifButton.addEventListener("click", () => {
         });
 });
 
-form.addEventListener("submit", (e) => {
-    console.log("New user submitted!")
-    e.preventDefault()
+form.addEventListener("click", () => {
+    console.log("New user submitted!");
+    e.preventDefault();
     axios.post('http://localhost:4321/user', {username: username,password:password,first_name:firstName,last_name:lastName,email:email})
         .then(() => {
             resetFormValues();
