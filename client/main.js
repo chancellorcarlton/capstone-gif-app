@@ -55,8 +55,8 @@ form.addEventListener("click", (e) => {
     axios.post('/users', {username:username.value,password:password.value,firstName:firstName.value,lastName:lastName.value,email:email.value})
         .then(() => {
           console.log(username);
-            resetFormValues();
-            location.reload();
+            // resetFormValues();
+            // location.reload();
         })
         .catch(err => console.log('ERROR', err));
 });
