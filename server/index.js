@@ -4,7 +4,7 @@ const app = express();
 const cors = require('cors');
 const path = require('path');
 const {seed} = require('./seed.js')
-const {SERVER_PORT} = process.env;
+// const {SERVER_PORT} = process.env;
 const {getGif} = require('./controller')
 const {user} = require('./controller')
 
@@ -24,7 +24,7 @@ app.get('/api/gif', getGif);
 
 app.post('/user', user);
 
-const port = process.env.PORT || SERVER_PORT;
+const port = process.env.PORT || 4321;
 
 app.listen(port, () => {
     console.log(`Listening on ${port}`)
