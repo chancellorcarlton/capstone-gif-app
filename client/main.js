@@ -39,7 +39,7 @@ gifButton.addEventListener("click", () => {
   while(gifSection.firstChild) {
       gifSection.removeChild(gifSection.firstChild);
   }
-  axios.get("http://localhost:4321/api/gif").then((res) => {
+  axios.get("/api/gif").then((res) => {
       const gif = document.createElement("img");
       gif.setAttribute("src", res.data);
       gif.setAttribute("alt", "Funny Gif");
@@ -52,7 +52,7 @@ form.addEventListener("click", (e) => {
     console.log("New user submitted!");
     e.preventDefault();
 
-    axios.post('http//localhost:4321/users/', {username:username,password:password,first_name:firstName,last_name:lastName,email:email})
+    axios.post('/users', {username:username,password:password,first_name:firstName,last_name:lastName,email:email})
         .then(() => {
           console.log(username);
             resetFormValues();
