@@ -15,6 +15,7 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
 
 module.exports = {
     getGif: (req, res) => {
+        console.log('hit')
         axios.get(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=funny&rating=g`)
         .then(gifRes => {
             res.status(200).send(gifRes.data.data.images.original.url);
@@ -23,6 +24,7 @@ module.exports = {
 
     user: (req, res) => {
         const {username, password, firstName, lastName, email} = req.body;
+        console.log('hit')
 
         sequelize.query(`INSERT INTO users (username, password, first_name, last_name, email)
         VALUES(${username}, ${password}, ${firstName}, ${lastName}, ${email})

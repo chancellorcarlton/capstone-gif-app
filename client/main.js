@@ -39,13 +39,15 @@ gifButton.addEventListener("click", () => {
     while(gifSection.firstChild) {
         gifSection.removeChild(gifSection.firstChild);
     }
-    axios.get("/api/gif/").then((res) => {
+    axios.get("/api/gif").then((res) => {
+      console.log(res)
         const gif = document.createElement("img");
         gif.setAttribute("src", res.data);
         gif.setAttribute("alt", "Funny Gif");
         gif.setAttribute("id", "gif");
         gifSection.appendChild(gif);
-        });
+        })
+        .catch(err => console.log('ERROR', err));
 });
 
 form.addEventListener("click", (e) => {
@@ -54,6 +56,7 @@ form.addEventListener("click", (e) => {
 
     axios.post('/users', {username:username,password:password,first_name:firstName,last_name:lastName,email:email})
         .then(() => {
+          console.log(username)
             resetFormValues();
             location.reload();
         })
