@@ -21,6 +21,8 @@ app.post('/seed', seed)
 
 app.get('/api/gif', getGif)
 
+app.post('/user')
+
 app.listen(SERVER_PORT, () => {
     console.log(`Listening on ${SERVER_PORT}`)
 });

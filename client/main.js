@@ -7,7 +7,8 @@ const firstName = document.getElementById("first-name");
 const lastName = document.getElementById("last-name");
 const username = document.getElementById("username");
 const password = document.getElementById("password");
-const submit = document.getElementById("submit")
+const email = document.getElementById("email")
+const form = document.getElementsByClassName("user-form")
 
 
 
@@ -47,11 +48,11 @@ gifButton.addEventListener("click", () => {
         });
 });
 
-// const users = [
-//     { username: 'chance', password: 'password' },
-//     { username: 'izzy', password: 'password123' }
-// ]
+form.addEventListener("submit", (e) => {
+    console.log("New user submitted!")
 
+    
+})
 // const saveData = () => {
 //     let username = document.getElementById("username").value;
 //     let password = document.getElementById("password").value;
