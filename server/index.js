@@ -3,8 +3,8 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const path = require('path');
+const {seed} = require('./seed.js')
 const {SERVER_PORT} = process.env;
-// const {seed} = require('./seed.js')
 const {getGif} = require('./controller')
 
 app.use(cors());
@@ -16,7 +16,7 @@ app.get('/', function(req, res) {
 });
 
 
-// app.post('/seed', seed)
+app.post('/seed', seed)
 
 
 app.get('/api/gif', getGif)

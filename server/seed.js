@@ -2,7 +2,7 @@ require('dotenv').config();
 const {CONNECTION_STRING} = process.env;
 
 const Sequelize = require('sequelize');
-const sequelize = new sequelize(CONNECTION_STRING, {
+const sequelize = new Sequelize(CONNECTION_STRING, {
     dialect: 'postgres',
     dialectOptions: {
         ssl: {
@@ -14,6 +14,7 @@ const sequelize = new sequelize(CONNECTION_STRING, {
 module.exports = {
     seed: (req, res) => {
         sequelize.query(`
+
         CREATE TABLE users (
             username SERIAL PRIMARY KEY,
             password VARCHAR(180),
@@ -21,6 +22,7 @@ module.exports = {
             last_name VARCHAR(180),
             email VARCHAR(300)
         );
+
         `).then(() => {
             console.log('DB SEEDED!');
             res.sendStatus(200);
