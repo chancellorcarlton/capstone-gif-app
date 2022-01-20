@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 const {DATABASE_URL, GIF_API_KEY} = process.env
 const axios = require('axios');
 const apiKey = GIF_API_KEY

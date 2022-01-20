@@ -5,8 +5,8 @@ const cors = require('cors');
 const path = require('path');
 const {seed} = require('./seed.js')
 const {SERVER_PORT} = process.env;
-const {getGif} = require('./controller')
-const {user} = require('./controller')
+const {getGif, user} = require('./controller')
+
 
 app.use(cors());
 app.use(express.json());

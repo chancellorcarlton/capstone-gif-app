@@ -34,29 +34,27 @@ navLogo.addEventListener('click', hideMobileMenu);
 
 
 gifButton.addEventListener("click", () => {
-    console.log("hit");
+  console.log("hit");
 
-    while(gifSection.firstChild) {
-        gifSection.removeChild(gifSection.firstChild);
-    }
-    axios.get("/api/gif").then((res) => {
-      console.log(res)
-        const gif = document.createElement("img");
-        gif.setAttribute("src", res.data);
-        gif.setAttribute("alt", "Funny Gif");
-        gif.setAttribute("id", "gif");
-        gifSection.appendChild(gif);
-        })
-        .catch(err => console.log('ERROR', err));
+  while(gifSection.firstChild) {
+      gifSection.removeChild(gifSection.firstChild);
+  }
+  axios.get("http://localhost:4321/api/gif/").then((res) => {
+      const gif = document.createElement("img");
+      gif.setAttribute("src", res.data);
+      gif.setAttribute("alt", "Funny Gif");
+      gif.setAttribute("id", "gif");
+      gifSection.appendChild(gif);
+       });
 });
 
 form.addEventListener("click", (e) => {
     console.log("New user submitted!");
     e.preventDefault();
 
-    axios.post('/users', {username:username,password:password,first_name:firstName,last_name:lastName,email:email})
+    axios.post('http//localhost:4321/users/', {username:username,password:password,first_name:firstName,last_name:lastName,email:email})
         .then(() => {
-          console.log(username)
+          console.log(username);
             resetFormValues();
             location.reload();
         })
