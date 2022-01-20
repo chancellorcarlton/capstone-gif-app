@@ -48,9 +48,10 @@ gifButton.addEventListener("click", () => {
         });
 });
 
-form.addEventListener("click", () => {
-    console.log("New user submitted!");
+form.addEventListener("click", (e) => {
     e.preventDefault();
+    console.log("New user submitted!");
+
     axios.post('http://localhost:4321/users', {username:username,password:password,first_name:firstName,last_name:lastName,email:email})
         .then(() => {
             resetFormValues();
