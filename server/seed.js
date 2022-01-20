@@ -14,8 +14,11 @@ const sequelize = new Sequelize(DATABASE_URL, {
 module.exports = {
     seed: (req, res) => {
         sequelize.query(`
+        DROP TABLE IF EXISTS users;
+
         CREATE TABLE users (
-            username SERIAL PRIMARY KEY,
+            userid SERIAL PRIMARY KEY,
+            username VARCHAR(180),
             password VARCHAR(180),
             first_name VARCHAR(180),
             last_name VARCHAR(180),

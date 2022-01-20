@@ -52,7 +52,7 @@ form.addEventListener("click", (e) => {
     console.log("New user submitted!");
     e.preventDefault();
 
-    axios.post('/users', {username:username,password:password,first_name:firstName,last_name:lastName,email:email})
+    axios.post('/users', {username:username.value,password:password.value,firstName:firstName.value,lastName:lastName.value,email:email.value})
         .then(() => {
           console.log(username);
             resetFormValues();
