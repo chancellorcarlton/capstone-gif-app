@@ -15,10 +15,9 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../client/index.html'));
 });
 
-
 app.post('/seed', seed)
 
-
+// FEATURES
 app.get('/api/gif', getGif)
 
 app.post('/user')

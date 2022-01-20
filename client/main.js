@@ -50,21 +50,12 @@ gifButton.addEventListener("click", () => {
 
 form.addEventListener("submit", (e) => {
     console.log("New user submitted!")
-
-    
-})
-// const saveData = () => {
-//     let username = document.getElementById("username").value;
-//     let password = document.getElementById("password").value;
-//     const foundUser = users.find(user => user.username === username && user.password === password);
-//     if (!foundUser) {
-//         console.log("Invalid User")
-//     } else {
-        
-//     }
-// }
-
-document.addEventListener('DOMContentLoaded', () => {
-    submit.addEventListener('click', saveData());
+    e.preventDefault()
+    axios.post('http://localhost:4321/user', {username: username,password:password,first_name:firstName,last_name:lastName,email:email})
+        .then(() => {
+            resetFormValues();
+            location.reload();
+        })
+        .catch(err => console.log('ERROR', err));
 });
 
