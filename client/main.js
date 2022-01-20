@@ -39,7 +39,7 @@ gifButton.addEventListener("click", () => {
   while(gifSection.firstChild) {
       gifSection.removeChild(gifSection.firstChild);
   }
-  axios.get("http://localhost:4321/api/gif/").then((res) => {
+  axios.get("http://localhost:4321/api/gif").then((res) => {
       const gif = document.createElement("img");
       gif.setAttribute("src", res.data);
       gif.setAttribute("alt", "Funny Gif");
