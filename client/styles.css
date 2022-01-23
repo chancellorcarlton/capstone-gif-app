@@ -34,9 +34,9 @@
       align-items: center;
       cursor: pointer;
       text-decoration: none;
-      font-size: 2rem;  
+      font-size: 3rem;  
       background-color: #ff8177;
-      background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+      background-image: linear-gradient(to right, #ff0844 0%, #0099F7 100%);
       background-size: 100%;
       -webkit-background-clip: text;
       -moz-background-clip: text;
@@ -97,6 +97,11 @@
       transition: all 0.3s ease;
   }
 
+  #login:hover {
+    color: rgb(115, 255, 110);
+    transition: all 0.3s ease;
+  }
+
   @media screen and (max-width: 960px) {
     .navbar-container {
       display: flex;
@@ -127,7 +132,7 @@
         transition: all 0.5s ease;
         z-index: 99;
         height: 60vh;
-        font-size: 1.6rem;
+        font-size: 1.9rem;
       }
 
       #logo {
@@ -163,7 +168,7 @@
         align-items: center;
         width: 80%;
         height: 80px;
-        margin: 0;
+        margin: auto;
       }
 
       #mobile-menu {
@@ -191,6 +196,16 @@
       #mobile-menu.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
       }
+
+      #login {
+        font-size: 1.8rem;
+      }
+
+      #login:hover {
+        color: rgb(115, 255, 110);
+        transition: all 0.3s ease;
+      }
+
     }
 
     /* Home */
@@ -217,8 +232,8 @@
         margin-bottom: 24px;
         color: #fff;
         background: #0099F7; 
-        background: -webkit-linear-gradient(to bottom, #F11712, #0099F7); 
-        background: linear-gradient(to bottom, #F11712, #0099F7); 
+        background: -webkit-linear-gradient(to right, #F11712, #0099F7); 
+        background: linear-gradient(to right, #F11712, #0099F7); 
         background-size: 100%;
         -webkit-background-clip: text;
         -moz-background-clip: text;
@@ -252,8 +267,8 @@
         outline: none;
         border-radius: 100px;
         background: #0099F7;
-        background: -webkit-linear-gradient(to bottom, #F11712, #0099F7);
-        background: linear-gradient(to bottom, #F11712, #0099F7); 
+        background: -webkit-linear-gradient(to right, #F11712, #0099F7);
+        background: linear-gradient(to right, #F11712, #0099F7); 
         transition: all 0.3s ease;
         position: relative;
         text-decoration: none;
@@ -345,8 +360,6 @@
           background: #E0EAFC;  /* fallback for old browsers */
           background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
           background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-          
-          
       }
 
       .submit-btn {
@@ -362,8 +375,8 @@
         outline: none;
         border-radius: 100px;
         background: #0099F7; 
-        background: -webkit-linear-gradient(to bottom, #F11712, #0099F7); 
-        background: linear-gradient(to bottom, #F11712, #0099F7); 
+        background: -webkit-linear-gradient(to right, #F11712, #0099F7); 
+        background: linear-gradient(to right, #F11712, #0099F7); 
         transition: all 0.3s ease;
       }
 
@@ -371,6 +384,37 @@
         color: rgb(115, 255, 110);
         transition: all 0.3s ease;
     }
+
+
+  /* LOGIN PAGE */
+
+.login-heading {
+  display: flex;
+  font-size: 5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30%;
+  background: #0099F7; 
+  background: -webkit-linear-gradient(to right, #F11712, #0099F7); 
+  background: linear-gradient(to right, #F11712, #0099F7); 
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -mo-text-fill-color: transparent;
+}
+
+.login-form {
+  color: rgb(243, 243, 243);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 150px;
+}
+
 
 
 

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Gif User</title>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" id="logo">GIF</a>
+            <div class="toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="index.html" class="navbar-links" id="home-page">HOME</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="index.html" class="navbar-links" id="getgif-page">GIFS</a>
+                </li>
+                <li class="navbar-btn">
+                    <a href="login.html" class="navbar-links" id="login-page"><button class="button" id="login">LOGIN</button></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+        <!-- Create User -->
+        <div class="user">
+            <div class="user-container">
+              <h1 class="login-heading">LOGIN</h1>
+                <form class="login-form">
+                    <br>
+                    <label for="username"></label>
+                    <input type="text" class="input-box" id="username" name="username" placeholder="ENTER USERNAME">
+                    <label for="password"></label>
+                    <input type="text" class="input-box" id="password" name="password" placeholder="ENTER PASSWORD">
+                    <br>
+                    <div>
+                        <input type="submit" value="LOGIN" class="submit-btn" id="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -32,7 +32,7 @@ const hideMobileMenu = () => {
 menuLinks.addEventListener('click', hideMobileMenu);
 navLogo.addEventListener('click', hideMobileMenu);
 
-
+// Git Btn
 gifButton.addEventListener("click", () => {
   console.log("hit");
 
@@ -45,7 +45,7 @@ gifButton.addEventListener("click", () => {
       gif.setAttribute("alt", "Funny Gif");
       gif.setAttribute("id", "gif");
       gifSection.appendChild(gif);
-       });
+      });
 });
 
 form.addEventListener("click", (e) => {
@@ -54,9 +54,9 @@ form.addEventListener("click", (e) => {
 
     axios.post('/users', {username:username.value,password:password.value,firstName:firstName.value,lastName:lastName.value,email:email.value})
         .then(() => {
-          console.log(username);
-            // resetFormValues();
-            // location.reload();
+          // console.log(username);
+            resetFormValues();
+            location.reload();
         })
         .catch(err => console.log('ERROR', err));
 });
