@@ -7,8 +7,11 @@ const firstName = document.getElementById("first-name");
 const lastName = document.getElementById("last-name");
 const username = document.getElementById("username");
 const password = document.getElementById("password");
-const email = document.getElementById("email")
-const form = document.getElementById("submit")
+const email = document.getElementById("email");
+const form = document.getElementById("submit");
+const login = document.getElementById("login-submit");
+const userCard = document.getElementById("user-card");
+const user = document.getElementsByClassName("user");
 
 
 
@@ -32,23 +35,27 @@ const hideMobileMenu = () => {
 menuLinks.addEventListener('click', hideMobileMenu);
 navLogo.addEventListener('click', hideMobileMenu);
 
-// Git Btn
-gifButton.addEventListener("click", () => {
-  console.log("hit");
+// Gif Btn
+if(gifButton){
+  gifButton.addEventListener('click', () => {
+    console.log("hit");
+  
+    while(gifSection.firstChild) {
+        gifSection.removeChild(gifSection.firstChild);
+    }
+  
+    axios.get("/api/gif").then((res) => {
+        const gif = document.createElement("img");
+        gif.setAttribute("src", res.data);
+        gif.setAttribute("alt", "Funny Gif");
+        gif.setAttribute("id", "gif");
+        gifSection.appendChild(gif);
+        });
+  });
+}
 
-  while(gifSection.firstChild) {
-      gifSection.removeChild(gifSection.firstChild);
-  }
-  axios.get("/api/gif").then((res) => {
-      const gif = document.createElement("img");
-      gif.setAttribute("src", res.data);
-      gif.setAttribute("alt", "Funny Gif");
-      gif.setAttribute("id", "gif");
-      gifSection.appendChild(gif);
-      });
-});
-
-form.addEventListener("click", (e) => {
+if(form){
+  form.addEventListener("click", (e) => {
     console.log("New user submitted!");
     e.preventDefault();
 
@@ -60,4 +67,26 @@ form.addEventListener("click", (e) => {
         })
         .catch(err => console.log('ERROR', err));
 });
+}
+
+if(login){
+  login.addEventListener('click', (e) => {
+    console.log("Hit login");
+    e.preventDefault();
+
+    while(user.firstElementChild) {
+        user.removeChild(user.firstElementChild);
+    }
+
+    axios.post('/login', {username:username.value,password:password.value})
+        .then(() => {
+          console.log(user)
+        })
+})
+
+}
+
+// if(delete){
+
+// }
 

@@ -32,6 +32,15 @@ module.exports = {
         RETURNING *;`)
             .then(dbRes => res.status(200).send(dbRes[0]))
             .catch(err => console.log(err));
+    },
+
+    login: (req, res) => {
+        console.log(req.body);
+        const {username, password} = req.body
+
+        sequelize.query(`SELECT * FROM users WHERE username = '${username}' AND password = '${password}';`)
+            .then(dbRes => res.status(200).send(dbRes[0]))
+            .catch(err => console.log(err));
     }
 
 };

@@ -5,7 +5,7 @@ const cors = require('cors');
 const path = require('path');
 const {seed} = require('./seed.js')
 const {SERVER_PORT} = process.env;
-const {getGif, user} = require('./controller')
+const {getGif, user, login} = require('./controller')
 
 
 app.use(cors());
@@ -23,6 +23,8 @@ app.post('/seed', seed);
 app.get('/api/gif', getGif);
 
 app.post('/users', user);
+
+app.post('/login', login);
 
 
 const port = process.env.PORT || SERVER_PORT;
