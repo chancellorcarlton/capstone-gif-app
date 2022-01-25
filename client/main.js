@@ -12,8 +12,7 @@ const form = document.getElementById("submit");
 const login = document.getElementById("login-submit");
 const userSection = document.getElementById("user-section");
 const acc = document.getElementById("acc");
-
-
+const remove = document.getElementById("delete");
 
 // Display Mobile Menu
 const mobileMenu = () => {
@@ -35,7 +34,6 @@ const hideMobileMenu = () => {
 menuLinks.addEventListener('click', hideMobileMenu);
 navLogo.addEventListener('click', hideMobileMenu);
 
-// Gif Btn
 if(gifButton){
   gifButton.addEventListener('click', () => {
     console.log("hit");
@@ -81,13 +79,29 @@ if(login){
     axios.post('/login', {username:username.value,password:password.value})
     .then(() => {
       userSection.parentNode.removeChild(userSection);
+      const out = document.getElementById("login")
+      out.innerHTML= "LOG OUT"
       let content = document.createTextNode("You're logged in!")
       acc.appendChild(content)
     }).catch((err) => {
       alert("Invalid entry")
     })
-
   });
-
 };
+
+// if(remove){
+//   remove.addEventListener('click', (e) => {
+//     console.log('hit remove');
+//     e.preventDefault();
+
+//     axios.delete('/remove', {username:username.value,password:password.value})
+//     .then(() => {
+//       userSection.parentNode.removeChild(userSection);
+//       let content = document.createTextNode("User deleted!")
+//       acc.appendChild(content)
+//     }).catch((err) => {
+//       alert("Invalid entry")
+//     })
+//   });
+// };
 
