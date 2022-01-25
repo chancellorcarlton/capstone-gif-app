@@ -25,7 +25,7 @@ module.exports = {
     user: (req, res) => {
         console.log(req.body);
         const {username, password, firstName, lastName, email} = req.body;
-        console.log('hit user')
+        console.log('hit user');
 
         sequelize.query(`INSERT INTO users (username, password, first_name, last_name, email)
         VALUES('${username}', '${password}', '${firstName}', '${lastName}', '${email}')
@@ -39,8 +39,15 @@ module.exports = {
         const {username, password} = req.body
 
         sequelize.query(`SELECT * FROM users WHERE username = '${username}' AND password = '${password}';`)
-            .then(dbRes => res.status(200).send(dbRes[0]))
-            .catch(err => console.log(err));
+            
+            .then(dbRes => 
+                // console.log(dbRes)
+                {if(dbRes[0].length < 1){
+                    res.status(400).send(console.log("Invalid entry"))
+                }else{
+                    res.status(200).send(dbRes[0])
+                }}
+            );
     }
 
 };

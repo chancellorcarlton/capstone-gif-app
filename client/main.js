@@ -10,8 +10,8 @@ const password = document.getElementById("password");
 const email = document.getElementById("email");
 const form = document.getElementById("submit");
 const login = document.getElementById("login-submit");
-const userCard = document.getElementById("user-card");
-const user = document.getElementsByClassName("user");
+const userSection = document.getElementById("user-section");
+const acc = document.getElementById("acc");
 
 
 
@@ -61,33 +61,33 @@ if(form){
 
     axios.post('/users', {username:username.value,password:password.value,firstName:firstName.value,lastName:lastName.value,email:email.value})
         .then(() => {
-          // console.log(username);
-            resetFormValues();
-            location.reload();
+            username.value = '';
+            password.value = '';
+            firstName.value = '';
+            lastName.value = '';
+            email.value = '';
         })
         .catch(err => console.log('ERROR', err));
-});
-}
+  }
+)};
+
 
 if(login){
   login.addEventListener('click', (e) => {
     console.log("Hit login");
     e.preventDefault();
 
-    while(user.firstElementChild) {
-        user.removeChild(user.firstElementChild);
-    }
-
+    
     axios.post('/login', {username:username.value,password:password.value})
-        .then(() => {
-          console.log(user)
-        })
-})
+    .then(() => {
+      userSection.parentNode.removeChild(userSection);
+      let content = document.createTextNode("You're logged in!")
+      acc.appendChild(content)
+    }).catch((err) => {
+      alert("Invalid entry")
+    })
 
-}
+  });
 
-
-// if(delete){
-
-// }
+};
 

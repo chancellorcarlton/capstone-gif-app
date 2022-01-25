@@ -18,11 +18,11 @@ module.exports = {
 
         CREATE TABLE users (
             userid SERIAL PRIMARY KEY,
-            username VARCHAR(180),
-            password VARCHAR(180),
-            first_name VARCHAR(180),
-            last_name VARCHAR(180),
-            email VARCHAR(300)
+            username VARCHAR(180) NOT NULL,
+            password VARCHAR(180) NOT NULL,
+            first_name VARCHAR(180) NOT NULL,
+            last_name VARCHAR(180) NOT NULL,
+            email VARCHAR(300) NOT NULL
         );
         `).then(() => {
             console.log('DB SEEDED!');

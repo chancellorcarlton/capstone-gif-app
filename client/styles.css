@@ -40,6 +40,7 @@
       background-size: 100%;
       -webkit-background-clip: text;
       -moz-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       -moz-text-fill-color: transparent;
   }
@@ -212,7 +213,7 @@
     .home {
         background: #000000;
         background: linear-gradient(to right, #161616, #000000);
-        padding: 0px 0 150px 0;
+        padding: auto;
     }
 
     #home-container {
@@ -224,7 +225,7 @@
         margin: 0 auto;
         height: 90%;
         text-align: center;
-        padding: 100px;
+        padding: 150px 0 260px 0;
       }
 
       .home-heading {
@@ -237,6 +238,7 @@
         background-size: 100%;
         -webkit-background-clip: text;
         -moz-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
         -mo-text-fill-color: transparent;
       }
@@ -249,6 +251,7 @@
         background-size: 100%;
         -webkit-background-clip: text;
         -moz-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
         -moz-text-fill-color: transparent;
       }
@@ -324,6 +327,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          height: 860px;
       }  
 
       .user-container {
@@ -331,6 +335,8 @@
           justify-content: center;
           align-items: center;
           flex-direction: column;
+          padding: 200px 0 200px 0;
+          
       }
 
       .user-heading {
@@ -341,6 +347,7 @@
           background-size: 100%;
           -webkit-background-clip: text;
           -moz-background-clip: text;
+          background-clip: text;
           -webkit-text-fill-color: transparent;
           -mo-text-fill-color: transparent;
       }
@@ -401,6 +408,7 @@
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   -mo-text-fill-color: transparent;
 }
@@ -412,9 +420,23 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding-bottom: 150px;
+  /* padding-bottom: 150px; */
 }
 
-
-
+#acc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #0099F7; 
+  background: -webkit-linear-gradient(to right, #F11712, #0099F7); 
+  background: linear-gradient(to right, #F11712, #0099F7); 
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -mo-text-fill-color: transparent;
+  font-size: 4rem;
+}
 
