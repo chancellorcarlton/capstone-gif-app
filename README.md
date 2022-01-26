@@ -1,5 +1,14 @@
-# Gif App
+# Gif App 
 
-## Chancellor Carlton
+### Created By: Chancellor Carlton
 
-__VERSION 1.0.0__
+_Version 1.0.0_
+
+This application's purpose is to allow users to generate random G rated gifs, allow the user to create an account that is stored in the backend database, and allow the users to login to their accounts.
+
+**Technology used:**
+* HTML
+* CSS
+* Javascript
+* SQL
+* Postgres Database
